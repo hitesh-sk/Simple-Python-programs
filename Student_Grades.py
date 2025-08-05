@@ -1,3 +1,29 @@
+def add_student(student_grades):
+  """Adds a new student and their grade to the dictionary."""
+  name = input("Enter student name: ")
+  grade = input("Enter student grade: ")
+  student_grades[name] = grade
+  print(f"Added {name} with grade {grade}")
+
+def update_student(student_grades):
+  """Updates an existing student's grade in the dictionary."""
+  name = input("Enter the name of the student to update: ")
+  if name in student_grades:
+    new_grade = input(f"Enter the new grade for {name}: ")
+    student_grades[name] = new_grade
+    print(f"Updated {name}'s grade to {new_grade}")
+  else:
+    print(f"Student {name} not found.")
+
+def print_grades(student_grades):
+  """Prints all student names and their grades."""
+  if not student_grades:
+    print("No student grades available.")
+  else:
+    print("Student Grades:")
+    for name, grade in student_grades.items():
+      print(f"{name}: {grade}")
+
 print("Welcome to the Student Grade Management Program!")
 
 while True:
